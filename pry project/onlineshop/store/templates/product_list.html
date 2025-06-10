@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+        .product-card {
+            background: white;
+            padding: 15px;
+            margin: 10px auto;
+            width: 60%;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .product-name {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .product-price {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Store</h1>
+        <h2>Available Products</h2>
+    </header>
+
+    {% for product in products %}
+        <div class="product-card">
+            <div class="product-name">{{ product.name }}</div>
+            <div class="product-price">Price: ${{ product.price }}</div>
+        </div>
+    {% endfor %}
+</body>
+</html>
